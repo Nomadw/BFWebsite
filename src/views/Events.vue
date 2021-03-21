@@ -1,32 +1,36 @@
 <template>
   <v-container>
-    <div>
-      <h1>Meets</h1>
-      <p>Check here for the next meet and details on meets!
-        Please be sure to check the rules before attending any BristolFurs meets.
-      </p>
-      <v-row>
-      <v-col>
+    <v-row>
+      <v-col xl>
+        <div>
+          <h1>Meets</h1>
+          <p>Check here for the next meet and details on meets!
+            Please be sure to check the rules before attending any BristolFurs meets.
+          </p>
+        </div>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col md="6" cols="12">
+        <next-event/>
         <v-card>
-         <next-event/>
+          <v-card-title><h2>Meet Details</h2></v-card-title>
+          <v-card-text>
+            <VueShowdown :markdown="eventDetails"/>
+          </v-card-text>
         </v-card>
         <v-card>
-          <h2>Meet Details</h2>
-          <VueShowdown :markdown="eventDetails" />
-        </v-card>
-        <v-card>
-          <h2>Upcoming Meets</h2>
-          <VueShowdown :markdown="upcomingEvents" />
+          <v-card-title><h2>Upcoming Meets</h2></v-card-title>
+          <v-card-text><VueShowdown :markdown="upcomingEvents"/></v-card-text>
         </v-card>
       </v-col>
-      <v-col>
+      <v-col md="6" cols="12">
         <v-card>
-          <h2>Meet FAQ</h2>
-          <VueShowdown :markdown="meetfaq" />
+          <v-card-title><h2>Meet FAQ</h2></v-card-title>
+          <v-card-text><VueShowdown :markdown="meetfaq"/></v-card-text>
         </v-card>
       </v-col>
-      </v-row>
-    </div>
+    </v-row>
   </v-container>
 </template>
 
@@ -54,7 +58,10 @@ export default {
 .v-card {
   padding: 2px;
   text-align: left;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
+
 .p {
   white-space: pre;
   padding: 2px;

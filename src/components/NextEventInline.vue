@@ -1,11 +1,8 @@
-<template name="NextEvent">
-  <v-card>
-    <v-card-title><h2>The Next Meet</h2></v-card-title>
-    <v-card-text>
-      <p>{{ getNextMeetDate() }}</p>
-      <slot/>
-    </v-card-text>
-  </v-card>
+<template name="NextEventInline">
+  <div class="d-none d-md-block pa-2 mt-2">
+    <h2>The Next Meet</h2>
+    <p>{{ getNextMeetDate() }}</p>
+  </div>
 
 </template>
 

@@ -8,7 +8,7 @@
                   :key="item.name"
                   @click="direct(item.path)"
                   :id="item.id">
-                <v-card class="nav-button">
+                <v-card class="nav-button pa-0 ma-0">
                   <!--<v-icon>mdi-{{item.icon}}</v-icon>--><h3>{{item.name}}</h3>
                 </v-card>
             </v-row>

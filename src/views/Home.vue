@@ -2,18 +2,18 @@
   <v-container id="background">
     <div id="background">
       <h1>Welcome to BristolFurs!</h1>
-    <v-col>
-      <v-card>
-        <VueShowdown :markdown="Welcome" />
-      </v-card>
-      <v-card @click="toevents()">
-          <next-event />
-      </v-card>
-    <v-card>
-      <ImageGallery
-      imagesPerPage="5" />
-    </v-card>
-    </v-col>
+      <v-col>
+        <v-card class="text-center">
+          <VueShowdown :markdown="Welcome"/>
+        </v-card>
+        <next-event>
+          <v-btn @click="toevents()" color="primary">See More</v-btn>
+        </next-event>
+        <v-card>
+          <ImageGallery
+            imagesPerPage="5"/>
+        </v-card>
+      </v-col>
     </div>
   </v-container>
 </template>
@@ -45,16 +45,14 @@ export default {
 
 <style scoped>
 #background {
-   background-image: url('/assets/logo.png');
+  background-image: url('/assets/logo.png');
 }
-.v-card {
-  padding: 2px;
-  text-align: center;
-}
+
 .p {
   white-space: pre;
   padding: 2px;
 }
+
 .v-img {
   padding: 5px;
 }

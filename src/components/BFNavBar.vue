@@ -3,7 +3,7 @@
       <v-card v-for="item in items"
       :key="item.name"
       @click="direct(item.path)"
-      class="nav-button"
+      class="nav-button pa-0 ma-0"
       :id="item.id">
         <!--<v-icon>mdi-{{item.icon}}</v-icon>--><h2>{{item.name}}</h2>
       </v-card>

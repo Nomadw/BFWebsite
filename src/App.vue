@@ -19,7 +19,7 @@
         />
         <h1 margin-top="10px">BristolFurs</h1><h5> Beta</h5>
         <v-spacer></v-spacer>
-        <next-event />
+        <next-event-inline />
         <Links />
       </v-app-bar>
       <BFNavBar v-if="!this.isMobile" :items="this.items" top-margin="20px"/>
@@ -41,7 +41,7 @@
 import BFNavBar from '@/components/BFNavBar.vue';
 import BFMobileNavBar from '@/components/BFMobileNavBar.vue';
 import Links from '@/components/Links.vue';
-import NextEvent from './components/NextEvent.vue';
+import NextEventInline from './components/NextEventInline.vue';
 
 export default {
   name: 'App',
@@ -49,7 +49,7 @@ export default {
     BFNavBar,
     BFMobileNavBar,
     Links,
-    NextEvent,
+    NextEventInline,
   },
   data() {
     return {
@@ -116,5 +116,11 @@ export default {
 }
 .h1 {
   margin-top: -50px;
+}
+.v-card {
+  padding: 4px;
+  text-align: left;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 </style>
