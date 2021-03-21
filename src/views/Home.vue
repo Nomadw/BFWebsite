@@ -11,7 +11,7 @@
         </next-event>
         <v-card>
           <ImageGallery
-            imagesPerPage="5"/>
+            imagesPerPage="6"/>
         </v-card>
       </v-col>
     </div>

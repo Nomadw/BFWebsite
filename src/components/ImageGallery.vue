@@ -1,20 +1,22 @@
 <template name="ImageGallery">
   <v-container>
-    <v-layout row wrap>
-      <v-flex v-for="image in images.slice(this.startImage, this.endImage)"
-        :key="image.pathLong">
-          <v-img :src="image.pathLong"
-           maxHeight=600px
-          maxWidth=300px>
-          </v-img>
-        </v-flex>
-      </v-layout>
-    <v-pagination
-    v-model="currentPage"
-    :length='pageCount'
-    prev-icon="mdi-menu-left"
-    next-icon="mdi-menu-right">
-    </v-pagination>
+    <v-row>
+      <v-col v-for="image in images.slice(this.startImage, this.endImage)"
+             :key="image.pathLong"
+             md-4>
+        <v-img :src="image.pathLong" max-height="300px" max-width="500px" contain/>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col md-12>
+        <v-pagination
+          v-model="currentPage"
+          :length='pageCount'
+          prev-icon="mdi-menu-left"
+          next-icon="mdi-menu-right">
+        </v-pagination>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -43,7 +45,11 @@ export default {
 
   methods: {
     importAll(r) {
-      r.keys().forEach((key) => (this.images.push({ pathLong: r(key), pathShort: key })));
+      r.keys()
+        .forEach((key) => (this.images.push({
+          pathLong: r(key),
+          pathShort: key,
+        })));
     },
     getPageCount(array) {
       this.pageCount = Math.floor(array.length / this.imagesPerPage);
@@ -61,7 +67,5 @@ export default {
 </script>
 
 <style scoped>
-.v_img {
-    padding: 10px;
-}
+
 </style>
